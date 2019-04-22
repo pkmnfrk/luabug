@@ -25,7 +25,17 @@ int main()
     printf("Stack: %d\n", lua_gettop(lua));
 
     luaL_dostring(lua, "return { test = \"bar\", print = print }");
-    lua_setupvalue(lua, -2, 1);
+    const char* upValueName = lua_setupvalue(lua, -2, 1);
+    
+    if(upValueName)
+    {
+        printf("Successfully set upvalue %s (0x%08x)!", upValueName, (int)upValueName);
+    }
+    else
+    {
+        printf("Uh oh, upValueName is null........ this is about to go bad\n");
+    }
+    
     lua_call(lua, 0, 0);
 
     return 0;

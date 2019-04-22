@@ -29,7 +29,7 @@ int main()
     
     if(upValueName)
     {
-        printf("Successfully set upvalue %s (0x%08x)!", upValueName, (int)upValueName);
+        printf("Successfully set upvalue %s (0x%08x)!\n", upValueName, (int)upValueName);
     }
     else
     {

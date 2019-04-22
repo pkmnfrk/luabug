@@ -106,6 +106,11 @@ namespace Scratch
             if(ret != IntPtr.Zero)
             {
                 Console.WriteLine("Got a valid pointer back! {0:x}", (int)ret);
+                Console.WriteLine("About to try and marshall back into a string... wish me luck!");
+
+                string res = Marshal.PtrToStringAuto(ret);
+
+                Console.WriteLine("Success! {0}", res);
             }
             else
             {

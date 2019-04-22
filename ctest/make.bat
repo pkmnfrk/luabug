@@ -1,2 +1,2 @@
 @echo off
-cl test.c liblua53.a /I include
+cl test.c %Platform%\liblua53.a /I include /link /OUT:%Platform%\test.exe

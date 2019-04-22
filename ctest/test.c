@@ -7,9 +7,11 @@ int print(lua_State* lua)
     for(int i = 1; i <= lua_gettop(lua); i++)
     {
         const char* str = lua_tostring(lua, i);
-
-        printf("%s\n", str);
+        if(i > 1)
+          printf(" ");
+        printf("%s", str);
     }
+    printf("\n");
     return 0;
 }
 

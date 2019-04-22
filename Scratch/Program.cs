@@ -28,8 +28,8 @@ namespace Scratch
                 if (i > 1)
                     Console.Write(' ');
                 Console.Write(v);
-
             }
+            Console.WriteLine();
             return 0;
         }
 

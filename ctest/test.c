@@ -16,19 +16,14 @@ int print(lua_State* lua)
 int main()
 {
     lua_State* lua = luaL_newstate();
-
     lua_register(lua, "print", print);
-
     luaL_dostring(lua, "test = \"foo\"");
-
     luaL_loadstring(lua, "print(test)");
 
     printf("Stack: %d\n", lua_gettop(lua));
 
     luaL_dostring(lua, "return { test = \"bar\", print = print }");
-
     lua_setupvalue(lua, -2, 1);
-
     lua_call(lua, 0, 0);
 
     return 0;
